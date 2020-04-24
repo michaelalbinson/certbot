@@ -299,6 +299,6 @@ def echo(keyword, path=None):
         raise ValueError('Error, keyword `{0}` is not a single keyword.'
                          .format(keyword))
     if path:
-        return '{0} -c "f = open(\'{1}\', \'a\'); print(\'{2}\', file=f)"'.format(os.path.basename(sys.executable, path, keyword))
+        return '{0} -c "f = open(\'{1}\', \'a\'); print(\'{2}\', file=f)"'.format(os.path.basename(sys.executable), path, keyword)
     else:
-        return '{0} -c "print(\'{1}\')"'.format(os.path.basename(sys.executable, keyword))
+        return '{0} -c "print(\'{1}\')"'.format(os.path.basename(sys.executable), keyword)
