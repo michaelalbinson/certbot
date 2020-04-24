@@ -25,7 +25,11 @@ def assert_hook_execution(probe_path, probe_content):
         data = file.read()
 
     lines = [line.strip() for line in data.splitlines()]
-    assert probe_content in lines
+    try:
+        assert probe_content in lines
+    except AssertionError:
+        print(lines)
+        raise
 
 
 def assert_saved_renew_hook(config_dir, lineage):
