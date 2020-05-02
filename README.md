@@ -5,7 +5,7 @@ Forked to work more happily on EC2 boxes so I don't need to keep following [this
 Let's Encrypt is a wonderful service and hopefully someone other than me will find this helpful.
 
 ## Steps to use:
-1. Install Pythom:
+1. Install Python:
     
     `yum install python27-devel git`
 
@@ -49,7 +49,7 @@ Let's Encrypt is a wonderful service and hopefully someone other than me will fi
       # Renew SSL Certs
       0  13  *  *  *  ec2-user  /opt/letsencrypt/letsencrypt-auto --no-bootstrap renew
       
-      # Restart NGINX
+      # Restart nginx
       10 13  *  *  *  root      nginx -s restart 
       ```
 
@@ -58,4 +58,4 @@ Credit:
 - [Medium post 2](https://medium.com/@andrenakkurt/great-guide-thanks-for-putting-this-together-gifford-nowland-c3ce0ea2455)
 - [Let's Encrypt Issue #5455](https://github.com/certbot/certbot/issues/5455)
 - [Amazon's Docs for certbot and Apache](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/SSL-on-amazon-linux-2.html#letsencrypt)
-    - I don't use this because personally I prefer NGINX, but to each their own!
+    - I don't use this because personally I prefer nginx, but to each their own!
