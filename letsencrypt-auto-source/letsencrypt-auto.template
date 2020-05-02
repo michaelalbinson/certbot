@@ -332,7 +332,7 @@ elif [ -f /etc/mageia-release ]; then
     ExperimentalBootstrap "Mageia" BootstrapMageiaCommon
   }
   BOOTSTRAP_VERSION="BootstrapMageiaCommon $BOOTSTRAP_MAGEIA_COMMON_VERSION"
-elif [ -f /etc/redhat-release ]; then
+elif [ -f /etc/redhat-release ] || grep 'cpe:.*:amazon_linux:2' /etc/os-release > /dev/null 2>&1; then
   # Run DeterminePythonVersion to decide on the basis of available Python versions
   # whether to use 2.x or 3.x on RedHat-like systems.
   # Then, revert LE_PYTHON to its previous state.
